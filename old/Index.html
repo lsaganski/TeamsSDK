@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Microsoft Teams SDK Reference</title>
+
+    <link rel="stylesheet" href="documentation/css/style.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+    <meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+    <header>
+        <div class="container" class="hide-in-xcode">
+            
+            <h1 id="library-title">
+                <a href="index.html">Microsoft Teams SDK </a>
+            </h1>
+
+            <p id="developer-home">
+                <a href="index.html">Microsoft</a>
+            </p>
+            
+        </div>
+    </header>
+
+    <aside>
+        <div class="container">
+            <nav>
+                <ul id="header-buttons" role="toolbar">
+                    <li><a href="documentation/hierarchy.html">Hierarchy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <article>
+        <div id="overview-contents" class="container">
+            <div id="content">
+                <main role="main">
+                    <h1 class="title">Microsoft Teams Mobile Embed SDK</h1>
+                    The Microsoft Teams Mobile Embed SDK enables you to add the Microsoft Teams meeting experience directly in your own app. The Embed SDK is easily added to your app and - with just a few lines of code – allows the app to join a Teams meeting directly.<br><br>
+                    
+                    <!--center><img src="documentation/img/teams_logo.png" alt="" heigh="100" width="100"></center>
+                    <br><br-->
+                    
+                    The Embed SDK is available for iOS and Android. By adding the SDK to your app’s project the app can join a meeting through a single line of code. When the meeting is joined, the normal Teams meeting experience will be initiated from within your app. The app’s user will be able to join a Teams meeting as a guest.
+                    
+                    <ul>
+                    <li>Easy as 1, 2, 3: Our SDK is built to be as easy as possible. Import the library, initialize the SDK and then add the meeting coordinates via one line of code.</li>
+                    <li>Out-of-the-Box Experience: The full Teams meeting experience is available with no extra code needed. All of the UI is ready for you without having to make a single change.</li>
+                    <li>Full Guest Experience: App users don’t need an existing Teams account. The SDK can join any existing Teams meeting from any tenant.</li>
+                      </ul>
+                    
+                    <div class="index-column">
+                        <h2 class="index-title">How does the Embed SDK work?</h2>
+                        Adding the Teams Embed SDK to your app’s project is just three steps:
+                        <ul>
+                             <li>Import the Embed SDK libraries to your mobile app’s project</li>
+                             <li>    Initialize the SDK with a single API call<br>
+                                               <pre><code>[MSTUIApplication.sharedInstance initialize];</code></pre></li>
+                             <li>Join a meeting with a URL<br>
+                                               <pre><code>[MSTUIApplication.sharedInstance joinMeetingWith:meetingUrl participantName:name error:error];</code></pre></li>
+                        </ul>
+                    </div>
+                    
+                    
+                    <div class="index-container">
+                                    <div class="index-column">
+                                        <h2 class="index-title">Getting Started</h2>
+                                        <ul>
+                                            <li><a href="documentation/getting_started.html">Step by step instructions for adding the Teams Embed SDK to your app</a></li>
+                                            <li><a href="documentation/videotutorials.html">Sample application walk through video</a></li>
+                                            <li><a href="TeamsSDKFramework/TeamsSDKFramework.zip">Download complete Teams Mobile Embed SDK Bundle</a></li>
+                                            <li><a href="documentation/hierarchy.html">API Reference</a></li>
+                                            <li><a href="documentation/troubleshooting.html">Troubleshooting Guide</a></li>
+                                             <li><a href="documentation/sdk_footprint.html">Understanding SDK Size/Footprint</a></li>
+                                        </ul>
+                                    </div>
+                     </div>
+                    
+                    <div class="index-container">
+                                                       <div class="index-column">
+                                                           <h2 class="index-title">Licensing</h2>
+                                                           Please carefully read the license terms that are included in the SDK. By using the SDK, you accept the license terms.
+                                                           <ul>
+                                                               <li><a href="TeamsEmbedSDKReleaseLicense.pdf">Teams Mobile Embed SDK Release License</a></li>
+                                                               <li><a href="TeamsEmbedSDKCodecEndUserLicense Terms.pdf">Teams Mobile Embed SDK Codec End User License Terms</a></li>
+                                                               <li><a href="documentation/tps.htm">Third Party Licenses</a></li>
+                                                           </ul>
+                                                       </div>
+                                        </div>
+
+                        <div class="index-container">
+                                                                         <div class="index-column">
+                                                                             <h2 class="index-title">Privacy</h2>
+                                                                    
+                                                                             <ul>
+                                                                                 <li><a href="https://www.aka.ms/privacy" target="_blank" >Privacy Statement</a></li>
+                                                                             </ul>
+                                                                         </div>
+                                                          </div>
+                        
+                        
+                            <div class="index-container">
+                                            <div class="index-column">
+                                                <h2 class="index-title">SDK Support</h2>
+                                                <ul>
+                                                    <li>Refer <a href="documentation/troubleshooting.html">Troubleshooting Guide</a></li>
+                                                    <li>Post your questions in <a href="c6d86528.microsoft.com@amer.teams.ms">  Embedded SDK - Partner TAP100 Validations Channel</a> </li>
+                                                    <li>You can also contact Teams mobile embed SDK developer support at <a href="mailto:teamsembedsdksupport@microsoft.com">teamsembedsdksupport@microsoft.com</a></li>
+                                                </ul>
+                                            </div>
+                             </div>
+                            
+                            <div class="index-container">
+                                           <div class="index-column">
+                                               <h2 class="index-title">Teams Mobile Embed SDK - Android</h2>
+                                               <ul>
+                                               <li>The Embed SDK is currently available for iOS (Android development is targeting the TAP program for June 2020).</li>
+                                               </ul>
+                                           </div>
+                            </div>
+                            
+                        
+                    </div>
+
+                    <footer>
+                        <div class="footer-copyright">
+                            
+                            <p class="copyright">Copyright &copy; 2020 Microsoft. All rights reserved. Updated: 2020-03-16</p>
+                            
+                            
+                            <p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+                            
+                        </div>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </article>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

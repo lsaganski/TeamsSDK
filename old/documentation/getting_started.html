@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Microsoft Teams SDK Reference</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+    <meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+    <header>
+        <div class="container" class="hide-in-xcode">
+            
+            <h1 id="library-title">
+                <a href="../index.html">Microsoft Teams SDK </a>
+            </h1>
+
+            <p id="developer-home">
+                <a href="../index.html">Microsoft</a>
+            </p>
+            
+        </div>
+    </header>
+
+    <aside>
+        <div class="container">
+            <nav>
+                <ul id="header-buttons" role="toolbar">
+                    <li><a href="hierarchy.html">Hierarchy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <article>
+        <div id="overview-contents" class="container">
+            <div id="content">
+                <main role="main">
+                    <h1 class="title">Getting Started with Microsoft Teams Mobile SDK</h1>
+                    <div class="index-container">
+                                    <div class="index-column">
+                                        <h2 class="index-title">Prerequisite</h2>
+                                        <ul>
+                                            <li>X-code version: 10.2 or higher </i></li>
+                                            <li>Swift version: Swift 4 or higher</li>
+                                            <li>Deployment Target: 10 or higher</li>
+                                        </ul>
+                                    </div>
+                     </div>
+                    
+                    <div class="index-container">
+                                                    <div class="index-column">
+                                                        <h2 class="index-title">Project Setup</h2>
+                                                        Download <a href="../TeamsSDKFramework/TeamsSDKFramework.zip">Teams SDK Bundle</a> and unarchive it. You will find TeamsAppSDK.framework for both simulator and device separately. Follow the below setps<br><br>
+                                                        
+                                                        1. Copy TeamsAppSDK.framework folder into your application project folder.<br>
+                                                        2. Embed framework into your application.
+                                                        <ul>
+                                                        <li>In your app’s Project Navigator, select your project. In the Editor pane, go to General tab -> Open Embedded Binaries.
+                                                        
+                                                                                                              </li>
+                                                        <li>Click the + button to add a new framework. Click "Add Other" to navigate to where you just copied the TeamsAppSDK.framework. Add TeamsAppSDK.framework as an "Embedded Binary" (not a "Linked Framework").
+                                                        <center><img src="img/embeddedBinaries.png" style="margin:20px;width:80%;"/></center>
+                                                        </li>
+                                                        </ul>
+                                                        
+                                                        3. In the Project Navigator, select your project. In the Editor pane, go to Build Phases → Click on + sign → Create a New Run Script Phase<br>
+                                                        <center><img src="img/runScript.png" style="margin:20px;width:70%;"/></center><br>
+                                                        Add the below script to it
+                                                        <div style="margin:10px;margin-end:10px;padding:8px;border:1px solid gray;color:#333333;font-size:12px;width:100%">#!/bin/sh<br>
+pushd "${TARGET_BUILD_DIR}"/"${PRODUCT_NAME}".app/Frameworks/TeamsAppSDK.framework/Frameworks<br>
+for EACH in *.framework; do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;echo "-- signing ${EACH}"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;/usr/bin/codesign --force --deep --sign "${EXPANDED_CODE_SIGN_IDENTITY}" --entitlements "${TARGET_TEMP_DIR}/${PRODUCT_NAME}.app.xcent"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;--timestamp=none $EACH<br>
+done<br>
+popd<br>
+echo "BUILD DIR ${TARGET_BUILD_DIR}"<br></div><br>
+                                                            
+                                                            
+                                                        
+                                                        
+            4. Configure the information property list file (Info.plist) that contains data about your app.
+            <ul>
+            <li>Define and provide a usage description of all the system’s privacy-sensitive data accessed by the framework in Info.plist as below
+                <ul>
+                    <li>Privacy — Photo Library Usage Description</li>
+                    <li>Privacy — Microphone Usage Description</li>
+                    <li>Privacy — Camera Usage Description</li>
+                    <li>Privacy — Contacts Usage Description</li>
+                    <li>Privacy — Photo Library Additions Usage Description</li>
+                </ul>
+            </li>
+            </ul>
+            5.    Turn on Keychain sharing in Xcode
+            <ul>
+               <li>Select your app target and click Capabilities tab.</li>
+               <li>Turn on the Keychain Sharing capability.</li>
+               <li>Add com.microsoft.intune.mam to the keychain group.</li>
+            </ul>
+            6. Turn on Voice over IP background mode.
+            <ul>
+                 <li>Select your app target and click Capabilities tab.
+                 <li>Turn on Background Modes if not done so already and select checkbox for Voice over IP
+                 <center><img src="img/backgroundMode.png" style="margin:20px;width:80%;"/></center>
+                 </li>
+            </ul>
+              
+              7. Set Enable Bitcode option to NO in your app project.
+              <ul>
+                  <li>In the Project Navigator, select your project, go to the Editor pane, select Project -> Build Settings -> select All tab -> Build Options -> Enable Bitcode = NO</li>
+              </ui>
+
+            </div>
+                                                    
+                                                    
+    <div class="index-container">
+                    <div class="index-column">
+                        <h2 class="index-title">Using Teams SDK APIs</h2>
+<h4>Object-c</h4>
+<pre><code>
+[MSTUIApplication.sharedInstance initialize];
+[MSTUIApplication.sharedInstance joinMeetingWith:meetingUrl participantName:name error:error];
+</code>
+</pre>
+<h4>Swift</h4>
+<pre><code>
+MSTUIApplication.sharedInstance()?.initialize();
+MSTUIApplication.sharedInstance()?.joinMeeting(with: urlString, participantName: participantName, error: &error);
+</code>
+</pre>
+</div></div>
+                                                  
+                                                    
+                                                    
+  </div>
+                    
+                    
+                    
+                    
+                    <h1 class="title">Microsoft Teams SDK Reference</h1>
+
+                    
+
+                    <div class="index-container">
+                        
+
+                        
+                        <div class="index-column">
+                            <h2 class="index-title">Class References</h2>
+                            <ul>
+                                
+                                <li><a href="Classes/MSTUIApplication.html">MSTUIApplication</a></li>
+                                
+                            </ul>
+                        </div>
+                        
+
+                        
+                    </div>
+
+                    <footer>
+                        <div class="footer-copyright">
+                            
+                            <p class="copyright">Copyright &copy; 2020 Microsoft. All rights reserved. Updated: 2020-03-16</p>
+                            
+                            
+                            <p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+                            
+                        </div>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </article>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
