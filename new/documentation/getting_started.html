@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Microsoft Teams SDK Reference</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+    <meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+    <header>
+        <div class="container" class="hide-in-xcode">
+            
+            <h1 id="library-title">
+                <a href="../index.html">Microsoft Teams SDK </a>
+            </h1>
+
+            <p id="developer-home">
+                <a href="../index.html">Microsoft</a>
+            </p>
+            
+        </div>
+    </header>
+
+    <aside>
+        <div class="container">
+            <nav>
+                <ul id="header-buttons" role="toolbar">
+                    <li><a href="hierarchy.html">Hierarchy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <article>
+        <div id="overview-contents" class="container">
+            <div id="content">
+                <main role="main">
+                    <h1 class="title">Getting Started with Microsoft Teams Mobile SDK</h1>
+                    <div class="index-container">
+                                    <div class="index-column">
+                                        <h2 class="index-title">Prerequisite</h2>
+                                        <ul>
+                                            <li>Xcode version: 10.2 or higher </i></li>
+                                            <li>Swift version: Swift 4 or higher</li>
+                                            <li>Deployment Target: 10 or higher</li>
+                                            <li>Valid Architectures for devices: arm64, arm64e</li>
+                                        </ul>
+                                    </div>
+                     </div>
+                    
+                    <div class="index-container">
+                                                    <div class="index-column">
+                                                        <h2 class="index-title">Project Setup</h2>
+                                                        Download <a href="../TeamsSDKFramework/TeamsSDKFramework.zip">Teams SDK Bundle</a> and unarchive it. You will find TeamsAppSDK.framework for both simulator and device separately. Follow the below setps<br><br>
+                                                        
+                                                        1. Copy TeamsAppSDK.framework folder into your application project folder.<br>
+                                                        2. Embed framework into your application.
+                                                        <ul>
+                                                        <li>In your app’s Project Navigator, select your project. In the Editor pane, go to General tab -> Open Embedded Binaries.
+                                                        
+                                                                                                              </li>
+                                                        <li>Click the + button to add a new framework. Click "Add Other" to navigate to where you just copied the TeamsAppSDK.framework. Add TeamsAppSDK.framework as an "Embedded Binary" (not a "Linked Framework").
+                                                        <center><img src="img/embeddedBinaries.png" style="margin:20px;width:80%;"/></center>
+                                                        </li>
+                                                        </ul>
+                                                        
+                                                        3. Add framework signging script to build phases after Embed Frameworks phase.<br>
+                                                        <ul>
+                                                            <li>In the Project Navigator, select your project. In the Editor pane, go to Build Phases → Click on + sign → Create a New Run Script Phase</li>
+                                                        <center><img src="img/runScript.png" style="margin:20px;width:70%;"/></center><br>
+                                                        <li>Add the below script to it</li>
+                                                        <div style="margin:10px;margin-end:10px;padding:8px;border:1px solid gray;color:#333333;font-size:12px;width:100%">#!/bin/sh<br>
+if [ -d "${TARGET_BUILD_DIR}"/"${PRODUCT_NAME}".app/Frameworks/TeamsAppSDK.framework/Frameworks ]; then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pushd "${TARGET_BUILD_DIR}"/"${PRODUCT_NAME}".app/Frameworks/TeamsAppSDK.framework/Frameworks<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for EACH in *.framework; do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "-- signing ${EACH}"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/usr/bin/codesign --force --deep --sign "${EXPANDED_CODE_SIGN_IDENTITY}" --entitlements "${TARGET_TEMP_DIR}/${PRODUCT_NAME}.app.xcent" --timestamp=none $EACH<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "-- moving ${EACH}"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mv -nv ${EACH} ../../<br>
+&nbsp;&nbsp;&nbsp;&nbsp;done<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rm -rf "${TARGET_BUILD_DIR}"/"${PRODUCT_NAME}".app/Frameworks/TeamsAppSDK.framework/Frameworks<br>
+&nbsp;&nbsp;&nbsp;&nbsp;popd<br>
+&nbsp;&nbsp;&nbsp;&nbsp;echo "BUILD DIR ${TARGET_BUILD_DIR}"<br>
+fi<br>
+                                                        </div>
+</ul>
+                                                            
+                                                        
+                                                        
+            4. Configure the information property list file (Info.plist) that contains data about your app.
+            <ul>
+            <li>Define and provide a usage description of all the system’s privacy-sensitive data accessed by the framework in Info.plist as below
+                <ul>
+                    <li>Privacy — Microphone Usage Description</li>
+                    <li>Privacy — Camera Usage Description</li>
+                    <li>Privacy — Bluetooth Peripheral Usage Description</li>
+                    <li>Privacy — Bluetooth Always Usage Description</li>
+                </ul>
+            </li>
+            </ul>
+            5.    Turn on Keychain sharing in Xcode
+            <ul>
+               <li>Select your app target and click Capabilities tab.</li>
+               <li>Turn on the Keychain Sharing capability.</li>
+               <li>Add com.microsoft.intune.mam to the keychain group.</li>
+            </ul>
+            6. Turn on Voice over IP background mode.
+            <ul>
+                 <li>Select your app target and click Capabilities tab.
+                 <li>Turn on Background Modes if not done so already and select checkbox for Voice over IP
+                 <center><img src="img/backgroundMode.png" style="margin:20px;width:80%;"/></center>
+                 </li>
+            </ul>
+              
+              7. Set Enable Bitcode option to NO in your app project.
+              <ul>
+                  <li>In the Project Navigator, select your project, go to the Editor pane, select Project -> Build Settings -> select All tab -> Build Options -> Enable Bitcode = NO</li>
+              </ui>
+
+            </div>
+                                                    
+            <div class="index-container">
+                <div class="index-column">
+                    <h2 class="index-title">Xcode 11 Specific Steps</h2>
+                    1. Set window object reference to AppDelegate
+                    If your AppDelegate does not contain a window reference, please add a window variable in your AppDelegate
+                    <h4>Object-c</h4>
+<pre>
+<code>
+@property (strong, nonatomic) UIWindow *window;
+</code>
+</pre>
+<h4>Swift</h4>
+<pre>
+<code>
+var window: UIWindow?
+</code>
+</pre>
+                </div>
+            </div>
+            
+            <div class="index-container">
+                <div class="index-column">
+                    <h2 class="index-title">Preparation for App Store upload</h2>
+                    1. Remove i386 and x86_64 architectures from the frameworks in case of archiving<br><br>
+                    Add i386 and x86_64 architectures removing script to Build Phases <b>before the umbrella framework codesign phase</b> in case you would like to Archive your application. <br><br>
+                    In the Project Navigator, select your project. In the Editor pane, go to Build Phases → Click on + sign → Create a New Run Script Phase
+                    <div style="margin:10px;margin-end:10px;padding:8px;border:1px solid gray;color:#333333;font-size:12px;width:100%">
+                        echo "Target architectures: $ARCHS"<br>
+                        APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"<br>
+                        find "$APP_PATH" -name '*.framework' -type d | while read -r FRAMEWORK<br>
+                        do<br>
+                        FRAMEWORK_EXECUTABLE_NAME=$(defaults read "$FRAMEWORK/Info.plist" CFBundleExecutable)<br>
+                        FRAMEWORK_EXECUTABLE_PATH="$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME"<br>
+                        echo "Executable is $FRAMEWORK_EXECUTABLE_PATH"<br>
+                        echo $(lipo -info "$FRAMEWORK_EXECUTABLE_PATH")<br>
+                        FRAMEWORK_TMP_PATH="$FRAMEWORK_EXECUTABLE_PATH-tmp"<br>
+                        # remove simulator's archs if location is not simulator's directory<br>
+                        case "${TARGET_BUILD_DIR}" in<br>
+                        *"iphonesimulator")<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;echo "No need to remove archs"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;;;<br>
+                        *)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if $(lipo "$FRAMEWORK_EXECUTABLE_PATH" -verify_arch "i386") ; then<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;lipo -output "$FRAMEWORK_TMP_PATH" -remove "i386" "$FRAMEWORK_EXECUTABLE_PATH"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;echo "i386 architecture removed"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;rm "$FRAMEWORK_EXECUTABLE_PATH"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;mv "$FRAMEWORK_TMP_PATH" "$FRAMEWORK_EXECUTABLE_PATH"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;fi<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if $(lipo "$FRAMEWORK_EXECUTABLE_PATH" -verify_arch "x86_64") ; then<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;lipo -output "$FRAMEWORK_TMP_PATH" -remove "x86_64" "$FRAMEWORK_EXECUTABLE_PATH"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;echo "x86_64 architecture removed"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;rm "$FRAMEWORK_EXECUTABLE_PATH"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;mv "$FRAMEWORK_TMP_PATH" "$FRAMEWORK_EXECUTABLE_PATH"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;fi<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;;;<br>
+                        esac<br>
+                        echo "Completed for executable $FRAMEWORK_EXECUTABLE_PATH"<br>
+                        echo $(lipo -info "$FRAMEWORK_EXECUTABLE_PATH")<br>
+                        done<br>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="index-container">
+                <div class="index-column">
+                    <h2 class="index-title">Additional Steps for Swift Application</h2>
+                    
+                    Here are the steps to import the SDK in a pure Swift application. To import the framework header in a pure Swift app, you need to update (or create) bridging header with SDK public and Foundation headers.
+<pre>
+<code>
+#import &lt;Foundation/Foundation.h&gt;
+#import &lt;TeamsAppSDK/TeamsAppSDKPublic.h&gt;
+</code>
+</pre>
+                    
+                    If bridging header does not exist; Xcode also offers to create bridging header when you add an Objective-C file to an existing Swift app.
+                    
+                    <ul>
+                        <li>Create a new empty Objective C file in your project.
+                            <li>When Xcode offers to create a bridging header, Click on Create Bridging Header
+                                <center><img src="img/bridgingHeader.png" style="margin:20px;width:80%;"/></center>
+                            </li>
+                            <li>Update newly created bridging heder file with below text. You can also delete empty Objective-C file as this is not needed for SDK.
+<pre>
+<code>
+#import &lt;Foundation/Foundation.h&gt;
+#import &lt;TeamsAppSDK/TeamsAppSDKPublic.h&gt;
+</code>
+</pre>
+                                </ul>
+                    
+                    
+                </div>
+            </div>
+                                                  
+<div class="index-container">
+  <div class="index-column">
+      <h2 class="index-title">Using Microsoft Teams SDK APIs to join a meeting</h2>
+      <h4>Object-c</h4>
+      Import the SDK libraries to your mobile app’s project
+<pre><code>#import &lt;TeamsAppSDK/TeamsAppSDKPublic.h&gt;</code></pre>
+      Initialize the SDK and call a meeting joing API
+<pre><code>[MicrosoftTeamsSDK.sharedInstance initialize];
+[MicrosoftTeamsSDK.sharedInstance joinMeetingWith:meetingUrl participantName:name error:error];
+</code></pre>
+      
+      
+<h4>Swift</h4>
+Import the SDK libraries to your mobile app’s by updating the bridging header file
+<pre><code>#import &lt;TeamsAppSDK/TeamsAppSDKPublic.h&gt;</code></pre>
+<pre><code>MicrosoftTeamsSDK.sharedInstance()?.initialize();
+MicrosoftTeamsSDK.sharedInstance()?.joinMeeting(with: urlString, participantName: participantName, error: &error);
+</code></pre>
+  </div>
+</div>
+
+<div class="index-container">
+    <div class="index-column">
+        <h2 class="index-title">Add localization support based on your app</h2>
+        
+        The Microsoft Teams SDK supports over hundred strings and resources. The framework bundle contains Base and English languages. The rest of them are included in the Localizations.zip file included with the package. <br><br>
+        Add localizations to the SDK based on what your app supports:
+        <ul>
+            <li>Determine what kind of localizations your application supports from the app Xcode Project > Info > Localizations list</li>
+            <li>Unzip the Localizations.zip included with the package</li>
+            <li>Copy the localization folders from the unzipped folder based on what your app supports to the root of the TeamsAppSDK.framework</li>
+        </ul>
+    </div>
+</div>
+
+<div class="index-container">
+    <div class="index-column">
+        <h2 class="index-title">Setting up Screen Sharing feature</h2>
+        
+        The screen sharing feature set up and examples are available at <a href="screen_share.html">Screen Share Feature Usage page</a>.
+    </div>
+</div>
+
+</div>
+                    
+                    
+                    <h1 class="title">Microsoft Teams SDK Reference</h1>
+
+                    
+
+                    <div class="index-container">
+                        
+                        
+                        <div class="index-column">
+                            <h2 class="index-title">Class References</h2>
+                            <ul>
+                                
+                                <li><a href="Classes/MicrosoftTeamsSDK.html">MicrosoftTeamsSDK</a></li>
+                                
+                            </ul>
+                        </div>
+                        
+                        
+                    </div>
+
+                    <footer>
+                        <div class="footer-copyright">
+                            
+                            <p class="copyright">Copyright &copy; 2020 Microsoft. All rights reserved. Updated: 2020-04-13</p>
+                            
+                            
+                            <p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+                            
+                        </div>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </article>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

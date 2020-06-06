@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            
+            <title>Screen Share Feature Usage</title>
+            
+            <link rel="stylesheet" href="css/style.css">
+                <meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+                    <meta name="generator" content="appledoc 2.2.1 (build 1334)">
+                        </head>
+    <body class="appledoc">
+        <header>
+            <div class="container" class="hide-in-xcode">
+                
+                <h1 id="library-title">
+                    <a href="..\index.html">Microsoft Teams SDK </a>
+                </h1>
+                
+                <p id="developer-home">
+                <a href="..\index.html">Microsoft</a>
+                </p>
+                
+            </div>
+        </header>
+        
+        <aside>
+            <div class="container">
+                <nav>
+                    <ul id="header-buttons" role="toolbar">
+                        <li><a href="..\index.html">Home</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        
+        <article>
+            <div id="overview-contents" class="container">
+                <div id="content">
+                    <main role="main">
+                        <h1 class="title">Screen Share Feature Usage</h1>
+                        
+                        The SDK provides screen share feature for the meeting experience.
+                        
+                        <div class="index-column hierarchy-column">
+                            <h2 class="index-title">Steps to create Screen Share Extension</h2>
+                            
+                            1. Create new target
+                            <center><img src="img/ScreenShare/newTarget.png" style="margin:20px;" height="50%" width="50%"/></center>
+                            <br>
+                            2. Select Broadcast Upload Extension
+                            <center><img src="img/ScreenShare/broadcastUploadExtension.png" style="margin:20px;" height="50%" width="50%"/></center>
+                            <br>
+                            3. Provide Product Name, Organization Name (BundleIdentifier.ExtensionName) <B>ExtensionName</B> would be reused later in the code , Select the Language - Providing Objective-C example in this document, Do not include UI extension
+                            <center><img src="img/ScreenShare/broadcastUploadExtensionFill.png" style="margin:20px;" height="50%" width="50%"/></center>
+                            <br>
+                            4. Xcode asks to Activate Scheme once previos step is completed. Select <B>Activate</B>
+                            <center><img src="img/ScreenShare/activateScheme.png" style="margin:20px;" height="50%" width="50%"/></center>
+                            <br>
+                            5. Now the new target extension is created and In the project navigator new extension folder would be created containing info.plist, SampleHandler.h and SampleHandler.m
+                            <br><br><br>
+                            6. Go to Project, Select Screen Share target newly created, Under General Tab - Provide <B>Display name</B> for the extension which would be shown to the user while user tries to use share screen feature.
+                            <br><br><br>
+                            7. Optional Step - If want to rename the files SampleHandler.h and SampleHandler.m , then rename the files with name best aligning to your project . Go to Project, Select the Select Screen Share target newly created, Under Info tab - Change the value from SampleHandler to new file name corresponding to <B>NSExtensionPrincipalClass</B> Key.
+                            <br><br><br>
+                            8. Copy <a href="img/ScreenShare/SampleHandler.m">Sample Handler Code</a>, Rename SampleHanlder to desired name at all places, TSErrorDomain to your app error domain
+                            <br><br><br>
+                            9. Go to Project, Select Your application target, Under Capabilities Tab - Turn on App Groups this enables interprocess communication between the main app and extension app.
+                            <br><br><br>
+                            10. Go to Project, Select Screen Share target newly created, Under Capabilities Tab - Turn on App Groups this enables interprocess communication between the main app and extension app.
+                            <center><img src="img/ScreenShare/appGroups.png" style="margin:20px;" height="50%" width="50%"/></center>
+                            <br>
+                            11. Go to Project, Select Your application target, Under Info tab - Add key <B>AXPApplicationGroupIdentifier</B> and string value use the group identifier value created using the above step (sample : group.com.yourappdomain.yourappname)
+                            <br><br><br>
+                            12. Go to Project, Select the Select Screen Share target newly created, Under Info tab - Add key <B>AXPApplicationGroupIdentifier</B> and string value use the group identifier value (sample : group.com.yourappdomain.yourappname)
+                            <br><br><br>
+                            13. Once the Teams SDK is intialized, to enable the screen share feature
+                            <li> Call <B>setScreenSharingEnabledStatus</B> api - <B>YES</B> for Objective-C or <B>true</B> for Swift
+                            <li> Call <B>setExtensionBundleIdentifier</B> api - Use the Extension name created in <B>Step 3</B>
+                            <h4>Swift</h4>
+<pre><code>MicrosoftTeamsSDK.sharedInstance().initialize()
+MicrosoftTeamsSDK.sharedInstance().setScreenSharingEnabledStatus(true)
+MicrosoftTeamsSDK.sharedInstance().setExtensionBundleIdentifier(String(format: "%@.LamnahealthcareScreenBroadcastExtenstion", Bundle.main.bundleIdentifier!))
+</pre></code><br>
+
+                            14. Let us test screen share feature.
+                            <li> Join the meeting from multiple devices.
+                            <li> Click on More Options button (... button from call control view)
+                            <li> Select Share button from the list of options
+                            <li> Select Share Screen button from the list of options
+                            <li> Broadcast Picker view displayed with Display Name provided in <B>Step 6</B>, Click on Start Broadcast button
+                            <br><br><br>
+                            <footer>
+                                <div class="footer-copyright">
+                                    
+                                    <p class="copyright">Copyright &copy; 2020 Microsoft. All rights reserved. Updated: 2020-03-31</p>
+                                    
+                                    
+                                    <p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+                                    
+                                </div>
+                            </footer>
+                            </main>
+                </div>
+            </div>
+        </article>
+        
+        <script src="js/script.js"></script>
+    </body>
+</html>
+
