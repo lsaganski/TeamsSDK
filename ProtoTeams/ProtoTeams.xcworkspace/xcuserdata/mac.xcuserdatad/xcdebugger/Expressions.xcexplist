@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "GraphManager.startVideoCall(startDate:endDate:subject:completion:):GraphManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "AuthenticationManager.instance.userId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MainViewController.videoCall():MainViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

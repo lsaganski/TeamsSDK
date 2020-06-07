@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0403938D247CF8CC00CD293B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0403938C247CF8CC00CD293B /* AppDelegate.swift */; };
+		0403938F247CF8CC00CD293B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0403938E247CF8CC00CD293B /* SceneDelegate.swift */; };
+		04039391247CF8CC00CD293B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04039390247CF8CC00CD293B /* ViewController.swift */; };
+		04039394247CF8CC00CD293B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04039392247CF8CC00CD293B /* Main.storyboard */; };
+		04039396247CF8CF00CD293B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04039395247CF8CF00CD293B /* Assets.xcassets */; };
+		04039399247CF8CF00CD293B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04039397247CF8CF00CD293B /* LaunchScreen.storyboard */; };
+		040393A3247D0D3F00CD293B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040393A2247D0D3F00CD293B /* MainViewController.swift */; };
+		040393A5247D0EBF00CD293B /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040393A4247D0EBF00CD293B /* SpinnerViewController.swift */; };
+		040393A7247D103E00CD293B /* AuthSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040393A6247D103E00CD293B /* AuthSettings.plist */; };
+		040393AA247D123700CD293B /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040393A9247D123700CD293B /* AuthenticationManager.swift */; };
+		040393AC247D1EA400CD293B /* GraphManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040393AB247D1EA400CD293B /* GraphManager.swift */; };
+		04BE9553248AAC2600F42C1D /* teste.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BE9552248AAC2600F42C1D /* teste.m */; };
+		04BE9555248AACD800F42C1D /* TeamsAppSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BE9554248AACD700F42C1D /* TeamsAppSDK.framework */; };
+		04BE9556248AACD800F42C1D /* TeamsAppSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04BE9554248AACD700F42C1D /* TeamsAppSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		32FC03943DCFDF7E9FB84C43 /* Pods_ProtoTeams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66893BD032987235EAD3B4E5 /* Pods_ProtoTeams.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04BE9557248AACD800F42C1D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				04BE9556248AACD800F42C1D /* TeamsAppSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04039389247CF8CC00CD293B /* ProtoTeams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtoTeams.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0403938C247CF8CC00CD293B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0403938E247CF8CC00CD293B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		04039390247CF8CC00CD293B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04039393247CF8CC00CD293B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04039395247CF8CF00CD293B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04039398247CF8CF00CD293B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0403939A247CF8CF00CD293B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040393A2247D0D3F00CD293B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		040393A4247D0EBF00CD293B /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		040393A6247D103E00CD293B /* AuthSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AuthSettings.plist; sourceTree = "<group>"; };
+		040393A8247D113400CD293B /* ProtoTeams.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProtoTeams.entitlements; sourceTree = "<group>"; };
+		040393A9247D123700CD293B /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		040393AB247D1EA400CD293B /* GraphManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphManager.swift; sourceTree = "<group>"; };
+		04BE9551248AAC2600F42C1D /* ProtoTeams-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProtoTeams-Bridging-Header.h"; sourceTree = "<group>"; };
+		04BE9552248AAC2600F42C1D /* teste.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = teste.m; sourceTree = "<group>"; };
+		04BE9554248AACD700F42C1D /* TeamsAppSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TeamsAppSDK.framework; path = ProtoTeams/Frameworks/TeamsAppSDK.framework; sourceTree = "<group>"; };
+		66893BD032987235EAD3B4E5 /* Pods_ProtoTeams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProtoTeams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EDF47F08307EF5C1C02917D /* Pods-ProtoTeams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoTeams.release.xcconfig"; path = "Target Support Files/Pods-ProtoTeams/Pods-ProtoTeams.release.xcconfig"; sourceTree = "<group>"; };
+		F26DFDD3650DBF4ACCE142BF /* Pods-ProtoTeams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoTeams.debug.xcconfig"; path = "Target Support Files/Pods-ProtoTeams/Pods-ProtoTeams.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04039386247CF8CC00CD293B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BE9555248AACD800F42C1D /* TeamsAppSDK.framework in Frameworks */,
+				32FC03943DCFDF7E9FB84C43 /* Pods_ProtoTeams.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04039380247CF8CC00CD293B = {
+			isa = PBXGroup;
+			children = (
+				0403938B247CF8CC00CD293B /* ProtoTeams */,
+				0403938A247CF8CC00CD293B /* Products */,
+				E313775FBDAFF518E87D0090 /* Pods */,
+				BE806BBBF3C6A5949BC829AF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0403938A247CF8CC00CD293B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04039389247CF8CC00CD293B /* ProtoTeams.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0403938B247CF8CC00CD293B /* ProtoTeams */ = {
+			isa = PBXGroup;
+			children = (
+				040393A8247D113400CD293B /* ProtoTeams.entitlements */,
+				0403938C247CF8CC00CD293B /* AppDelegate.swift */,
+				0403938E247CF8CC00CD293B /* SceneDelegate.swift */,
+				04039390247CF8CC00CD293B /* ViewController.swift */,
+				04039392247CF8CC00CD293B /* Main.storyboard */,
+				04039395247CF8CF00CD293B /* Assets.xcassets */,
+				04039397247CF8CF00CD293B /* LaunchScreen.storyboard */,
+				0403939A247CF8CF00CD293B /* Info.plist */,
+				040393A2247D0D3F00CD293B /* MainViewController.swift */,
+				040393A4247D0EBF00CD293B /* SpinnerViewController.swift */,
+				040393A6247D103E00CD293B /* AuthSettings.plist */,
+				040393A9247D123700CD293B /* AuthenticationManager.swift */,
+				040393AB247D1EA400CD293B /* GraphManager.swift */,
+				04BE9552248AAC2600F42C1D /* teste.m */,
+				04BE9551248AAC2600F42C1D /* ProtoTeams-Bridging-Header.h */,
+			);
+			path = ProtoTeams;
+			sourceTree = "<group>";
+		};
+		BE806BBBF3C6A5949BC829AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04BE9554248AACD700F42C1D /* TeamsAppSDK.framework */,
+				66893BD032987235EAD3B4E5 /* Pods_ProtoTeams.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E313775FBDAFF518E87D0090 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F26DFDD3650DBF4ACCE142BF /* Pods-ProtoTeams.debug.xcconfig */,
+				7EDF47F08307EF5C1C02917D /* Pods-ProtoTeams.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04039388247CF8CC00CD293B /* ProtoTeams */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0403939D247CF8CF00CD293B /* Build configuration list for PBXNativeTarget "ProtoTeams" */;
+			buildPhases = (
+				49FCA141958131AF8C64412B /* [CP] Check Pods Manifest.lock */,
+				04039385247CF8CC00CD293B /* Sources */,
+				04039386247CF8CC00CD293B /* Frameworks */,
+				04039387247CF8CC00CD293B /* Resources */,
+				04BE9557248AACD800F42C1D /* Embed Frameworks */,
+				04C11B0C24860CDA001648BD /* ShellScript */,
+				BC1E7CBF91DCABD584380852 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProtoTeams;
+			productName = ProtoTeams;
+			productReference = 04039389247CF8CC00CD293B /* ProtoTeams.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04039381247CF8CC00CD293B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = Mobila;
+				TargetAttributes = {
+					04039388247CF8CC00CD293B = {
+						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
+					};
+				};
+			};
+			buildConfigurationList = 04039384247CF8CC00CD293B /* Build configuration list for PBXProject "ProtoTeams" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04039380247CF8CC00CD293B;
+			productRefGroup = 0403938A247CF8CC00CD293B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04039388247CF8CC00CD293B /* ProtoTeams */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04039387247CF8CC00CD293B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04039399247CF8CF00CD293B /* LaunchScreen.storyboard in Resources */,
+				04039396247CF8CF00CD293B /* Assets.xcassets in Resources */,
+				04039394247CF8CC00CD293B /* Main.storyboard in Resources */,
+				040393A7247D103E00CD293B /* AuthSettings.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04C11B0C24860CDA001648BD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\npushd \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}\".app/Frameworks/TeamsAppSDK.framework/Frameworks\nfor EACH in *.framework; do\n    echo \"-- signing ${EACH}\"\n    /usr/bin/codesign --force --deep --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" --entitlements \"${TARGET_TEMP_DIR}/${PRODUCT_NAME}.app.xcent\" --timestamp=none $EACH\ndone\npopd\necho \"BUILD DIR ${TARGET_BUILD_DIR}\"\n";
+		};
+		49FCA141958131AF8C64412B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProtoTeams-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC1E7CBF91DCABD584380852 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProtoTeams/Pods-ProtoTeams-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProtoTeams/Pods-ProtoTeams-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProtoTeams/Pods-ProtoTeams-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04039385247CF8CC00CD293B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04039391247CF8CC00CD293B /* ViewController.swift in Sources */,
+				0403938D247CF8CC00CD293B /* AppDelegate.swift in Sources */,
+				0403938F247CF8CC00CD293B /* SceneDelegate.swift in Sources */,
+				040393AA247D123700CD293B /* AuthenticationManager.swift in Sources */,
+				040393A3247D0D3F00CD293B /* MainViewController.swift in Sources */,
+				040393A5247D0EBF00CD293B /* SpinnerViewController.swift in Sources */,
+				040393AC247D1EA400CD293B /* GraphManager.swift in Sources */,
+				04BE9553248AAC2600F42C1D /* teste.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		04039392247CF8CC00CD293B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04039393247CF8CC00CD293B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04039397247CF8CF00CD293B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04039398247CF8CF00CD293B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0403939B247CF8CF00CD293B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0403939C247CF8CF00CD293B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0403939E247CF8CF00CD293B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F26DFDD3650DBF4ACCE142BF /* Pods-ProtoTeams.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ProtoTeams/ProtoTeams.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 966GA65W7R;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/ProtoTeams/Frameworks",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = ProtoTeams/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobila.ProtoTeams;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ProtoTeams/ProtoTeams-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0403939F247CF8CF00CD293B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EDF47F08307EF5C1C02917D /* Pods-ProtoTeams.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ProtoTeams/ProtoTeams.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 966GA65W7R;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/ProtoTeams/Frameworks",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = ProtoTeams/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobila.ProtoTeams;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ProtoTeams/ProtoTeams-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04039384247CF8CC00CD293B /* Build configuration list for PBXProject "ProtoTeams" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0403939B247CF8CF00CD293B /* Debug */,
+				0403939C247CF8CF00CD293B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0403939D247CF8CF00CD293B /* Build configuration list for PBXNativeTarget "ProtoTeams" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0403939E247CF8CF00CD293B /* Debug */,
+				0403939F247CF8CF00CD293B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04039381247CF8CC00CD293B /* Project object */;
+}
