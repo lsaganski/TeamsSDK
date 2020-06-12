@@ -1,0 +1,6 @@
+framework module Pods_HubCall {
+  umbrella header "Pods-HubCall-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HubCall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi7-NC-rhX">
+                                <rect key="frame" x="180" y="406" width="54" height="30"/>
+                                <state key="normal" title="SIGN IN"/>
+                                <connections>
+                                    <action selector="signIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="cbY-GC-sTK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qi7-NC-rhX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7a1-7R-nlv"/>
+                            <constraint firstItem="qi7-NC-rhX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nsg-fE-MH4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lsk-AH-ogm"/>
+                    <connections>
+                        <segue destination="lCu-Yd-FIQ" kind="show" identifier="userSignedIn" id="nwA-k6-BLd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="lqH-ef-ju8">
+            <objects>
+                <viewController id="lCu-Yd-FIQ" customClass="MainViewController" customModule="HubCall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Zd-8L-Ooa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yA2-Py-fFL">
+                                <rect key="frame" x="171" y="406" width="72" height="30"/>
+                                <state key="normal" title="CONNECT"/>
+                                <connections>
+                                    <action selector="onClickConnectWithSender:" destination="lCu-Yd-FIQ" eventType="touchUpInside" id="zxn-qn-hqf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOC-7d-MEy">
+                                <rect key="frame" x="171.5" y="536" width="71" height="30"/>
+                                <state key="normal" title="SIGN OUT"/>
+                                <connections>
+                                    <action selector="signOut" destination="lCu-Yd-FIQ" eventType="touchUpInside" id="tlU-KE-Gh9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yA2-Py-fFL" firstAttribute="centerX" secondItem="0Zd-8L-Ooa" secondAttribute="centerX" id="GPW-Ha-Vrj"/>
+                            <constraint firstItem="vOC-7d-MEy" firstAttribute="top" secondItem="yA2-Py-fFL" secondAttribute="bottom" constant="100" id="dBa-fB-OBN"/>
+                            <constraint firstItem="vOC-7d-MEy" firstAttribute="centerX" secondItem="0Zd-8L-Ooa" secondAttribute="centerX" id="iSG-0d-xiQ"/>
+                            <constraint firstItem="yA2-Py-fFL" firstAttribute="centerY" secondItem="0Zd-8L-Ooa" secondAttribute="centerY" id="uK6-F5-da7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Se-gk-S6I"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Oe4-lO-ffn"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="userSignedOut" id="qJi-vJ-IM6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F8a-ch-FgK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="941" y="135"/>
+        </scene>
+    </scenes>
+</document>

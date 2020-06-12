@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppId</key>
+	<string>2cc5e5bb-2d89-4e63-8441-5a84adf43638</string>
+	<key>GraphScopes</key>
+	<array>
+		<string>Calls.AccessMedia.All</string>
+		<string>Calls.JoinGroupCallasGuest.All</string>
+		<string>Calls.JoinGroupCall.All</string>
+		<string>Calls.InitiateGroupCall.All</string>
+		<string>Calls.Initiate.All</string>
+		<string>OnlineMeetings.ReadWrite</string>
+		<string>OnlineMeetings.ReadWrite.All</string>
+		<string>User.Read</string>
+	</array>
+</dict>
+</plist>
